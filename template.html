@@ -6,6 +6,7 @@
     <title>Foundation | Welcome</title>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ 
   </head>
   <body>
 
@@ -40,6 +41,7 @@
     <p class="subheader">Here at Infinity Health we value a well-balnced diet and believe it is important for people to get the daily nutrients their bodies require to function properly.
       So we made an application that shpwcases some of our favorite recipes, some recipes based on food preferences and some meals you can make with ingredianta you already have. Happy cooking!
     </p>
+    <!-- Link to API here to pull beginner recipes when click the button -->
      <button class="button">some text here<button>
     <button class="button">Beginner? Click Here!</button>
   </div>
@@ -77,13 +79,15 @@
     
     <div class="marketing-site-content-section">
       <div class="marketing-site-content-section-img">
-        <img src="https://images.pexels.com/photos/256046/pexels-photo-256046.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" />
+        <img src="https://images.pexels.com/photos/256046/pexels-photo-256046.jpeg?h=350&auto=compress&cs=tinysrgb" alt="thos photot" />
       </div>
       <div class="marketing-site-content-section-block">
         <h3 class="marketing-site-content-section-block-header">New to cooking?</h3>
+        <!-- display beginner recipes when clicked on -->
         <p class="marketing-site-content-section-block-subheader subheader">New to cooking and unsure where to get started? Check out these 3 beginner recipes we have chosen to get you started</p>
-        <a href="#" class="round button small">Show recipes</a>
+        <a href="#" onClick="getElementById('data') class="round button small">Show recipes</a>
       </div>
+      <!-- show some youtube videos when clicked on -->
       <div class="marketing-site-content-section-block small-order-2 medium-order-1">
         <h3 class="marketing-site-content-section-block-header">Need visuals</h3>
         <p class="marketing-site-content-section-block-subheader subheader">Some of us are visual learners and need extra resources. Here are some videos to help you grasp the fundamentals</p>
@@ -102,7 +106,7 @@
   <p class="lead">Our top recipe's of the day:</p>
 </div>
 
-<div class="row small-up-1 medium-up-2 large-up-3">
+<div class="row small-up-1 medium-up-2 large-up-3" id ="pic1">
   <div class="column">
     <div class="callout">
       <p>Food pic#1</p>
@@ -111,7 +115,7 @@
       <p class="subheader">Find Earth-like planets life outside the Solar System</p>
     </div>
   </div>
-  <div class="column">
+  <div class="column" id="pic2">
     <div class="callout">
       <p>Food pic#2</p>
       <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
@@ -119,7 +123,7 @@
       <p class="subheader">Find Earth-like planets life outside the Solar System</p>
     </div>
   </div>
-  <div class="column">
+  <div class="column" id="pic3">
     <div class="callout">
       <p> Food pic#3</p>
       <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
@@ -127,7 +131,7 @@
       <p class="subheader">Find Earth-like planets life outside the Solar System</p>
     </div>
   </div>
-  <div class="column">
+  <div class="column" id="pic4">
     <div class="callout">
       <p>Food pic#4</p>
       <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
