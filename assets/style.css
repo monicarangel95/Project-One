@@ -18,4 +18,8 @@
     color: #fefefe;
     font-weight: bold;
   }
-  
+  .C1{
+    margin: 20px;
+    border-top: red;
+    padding-top: 20px;
+  }
