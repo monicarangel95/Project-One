@@ -1,4 +1,20 @@
-// $.(document).readyfunction()) {
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://edamam-edamam-nutrition-analysis.p.rapidapi.com/api/nutrition-data?ingr=1%20large%20apple",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "edamam-edamam-nutrition-analysis.p.rapidapi.com",
+		"x-rapidapi-key": "3c8fa9a58bmshe064770bc740defp11927fjsn403e47f60d59"
+	}
+}
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+
+
+// $.(document).ready(function() {
 //     var settings = {
 //       async: true,
 //       crossDomain: true,
