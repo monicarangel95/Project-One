@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="search.css" />
+    <title>Search Bar</title>
+  </head>
+  <header>
+    <div class="top-bar" id="realEstateMenu">
+        <div class="top-bar-left">
+          <ul class="menu" data-responsive-menu="accordion">
+            <li class="menu-text">Infinity Health App</li>
+            <li><a href="C:\Users\joshu\week1-day2-html-css\Project-One\template.html">Home</a></li>
+           
+          </ul>
+  </header>
+  <body>
+    <div class="boxContainer">
+      <table class="elementsContainer">
+        <tr>
+          <td>
+            <input
+              type="text"
+              id="searchId"
+              placeholder="Search Recipes"
+              class="search"
+            />
+          </td>
+          <td>
+            <a href="#"><i class="material-icons" id="searchBtn">search</i></a>
+          </td>
+        </tr>
+      </table>
+      
+      <div id="resultsContainer">
+        <div id="results"></div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

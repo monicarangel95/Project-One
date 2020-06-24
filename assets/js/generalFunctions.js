@@ -1,8 +1,13 @@
 function main() {
     disclaimerModalController.addModalEventListeners();
 }
+
+function onUIControllerLoaded() {
+    generalFunctions.loadScript("./assets/javascript/module.js", main);
+}
+
 function onjQueryLoaded() {
-    generalFunctions.loadScript("./assets/js/input.js", main);
+    generalFunctions.loadScript("./assets/javascript/UserInt.js", onUIControllerLoaded);
 }
 
 function loadAllScripts() {
