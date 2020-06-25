@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title -->
+    <title>Recipes and Restaurants</title>
+    <!-- Link to Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+    <!-- Link to Firebase Database -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase.js"></script>
+
+    <!--JavaScript-->
+    <script src="./assets/javascript/functions.js"></script>
+    <script src="./assets/javascript/food.js"></script>
+</head>
+<body>
+    <!-- CLICK BUTTON -->
+
+    <!-- Dietry Requirements -->
+    <div class="container dietaryReq mb-5">
+        <h2 class="text-center mb-3" id="choices">What are your needs?</h2>
+        <!-- Type -->
+        <div class="col-sm jumbotron text-center" id="meals">
+            <h2>Meal Time</h2>
+            <h5>Please Select One</h5>
+            <form>
+                <label for="breakfast"><input type="radio" id="breakfast" name="mealtime" value="breakfast" />
+                    Breakfast</label>
+                <label for="lunch"><input class="ml-3" type="radio" id="lunch" name="mealtime" value="lunch" />
+                    Lunch</label>
+                <label for="dinner"><input class="ml-3" type="radio" id="dinner" name="mealtime" value="dinner" />
+                    Dinner</label>
+                <label for="no_preference"><input class="ml-3" type="radio" id="no_preference" name="mealtime"
+                        value="" />
+                    No Preference</label>
+            </form>
+        </div>
+        <!--/ .Type -->
+
+        <!-- Intolerance -->
+        <div class="col-sm jumbotron text-center color" id="intolerance">
+            <h2>Intolerance</h2>
+            <h5>Please Select All That Apply</h5>
+            <div class="form-check form-check-inline">
+                <form>
+                    <label><input class="form-check-input ml-3" type="checkbox" id="inlineCheckbox1" name="intolerance"
+                            value="dairy" />Dairy</label>
+                    <label><input class="form-check-input ml-3" type="checkbox" id="inlineCheckbox2" name="intolerance"
+                            value="egg" />Egg</label>
+                    <label><input class="form-check-input ml-3" type="checkbox" id="inlineCheckbox3" name="intolerance"
+                            value="gluten" />Gluten</label>
+                    <label><input class="form-check-input ml-3" type="checkbox" id="inlineCheckbox4" name="intolerance"
+                            value="peanut" />Peanut</label>
+                    <label><input class="form-check-input ml-3" type="checkbox" id="inlineCheckbox5" name="intolerance"
+                            value="sesame" />Sesame</label>
+                    <label><input class="form-check-input ml-3" type="checkbox" id="inlineCheckbox6" name="intolerance"
+                            value="shellfish" />Shellfish</label>
+                    <label><input class="form-check-input ml-3" type="checkbox" id="inlineCheckbox7" name="intolerance"
+                            value="soy" />Soy</label>
+                    <label><input class="form-check-input ml-3" type="checkbox" id="inlineCheckbox8" name="intolerance"
+                            value="sulfite" />Sulfite</label>
+                    <label><input class="form-check-input ml-3" type="checkbox" id="inlineCheckbox9" name="intolerance"
+                            value="treenut" />Treenut</label>
+                    <label><input class="form-check-input ml-3" type="checkbox" id="inlineCheckbox10" name="intolerance"
+                            value="wheat" />Wheat</label>
+                </form>
+            </div>
+        </div>
+        <!--/ .Intolerance -->
+        <!-- Diet -->
+        <div class="col-sm jumbotron text-center" id="diet">
+            <h2>Dietary Specifications</h2>
+            <h5>Please Select One</h5>
+            <form>
+                <label for="lactovegetarian"><input class="ml-3" type="radio" id="lactovegetarian" name="diet"
+                        value="lacto vegetarian" />
+                    Lacto Vegetarian</label>
+                <label for="ovovegetarian"><input class="ml-3" type="radio" id="ovovegetarian" name="diet"
+                        value="ovo vegetarian" />
+                    Ovo Vegetarian</label>
+                <label for="none"><input class="ml-3" type="radio" id="none" name="diet" value="" />
+                    None</label>
+                <label for="vegan"><input class="ml-3" type="radio" id="vegan" name="diet" value="vegan" />
+                    Vegan</label>
+                <label for="vegetarian"><input class="ml-3" type="radio" id="vegetarian" name="diet"
+                        value="vegetarian" />
+                    Vegetarian</label>
+                <label for="pescatarian"><input class="ml-3" type="radio" id="pescatarian" name="diet"
+                        value="pescatarian" />
+                    Pescatarian</label>
+
+            </form>
+        </div>
+        <!--/ .Diet -->
+        <!-- Cuisine -->
+        <div class="col-sm jumbotron text-center" id="cuisine">
+            <h2>Cuisine</h2>
+            <h5>Please Select One</h5>
+            <form>
+                <label for="african"><input class="ml-3" type="radio" id="african" name="cuisine" value="African" />
+                    African</label>
+                <label for="american"><input class="ml-3" type="radio" id="american" name="cuisine" value="American" />
+                    American</label>
+                <label for="british"><input class="ml-3" type="radio" id="british" name="cuisine" value="British" />
+                    British</label>
+                <label for="cajun"><input class="ml-3" type="radio" id="cajun" name="cuisine" value="Cajun" />
+                    Cajun</label>
+                <label for="caribbean"><input class="ml-3" type="radio" id="caribbean" name="cuisine"
+                        value="Caribbean" />
+                    Caribbean</label>
+                <label for="chinese"><input class="ml-3" type="radio" id="chinese" name="cuisine" value="Chinese" />
+                    Chinese</label>
+                <label for="eastern"><input class="ml-3" type="radio" id="eastern" name="cuisine"
+                        value="Eastern European" />
+                    Eastern European</label>
+                <label for="french"><input class="ml-3" type="radio" id="french" name="cuisine" value="French" />
+                    French</label>
+                <label for="german"><input class="ml-3" type="radio" id="german" name="cuisine" value="German" />
+                    German</label>
+                <label for="greek"><input class="ml-3" type="radio" id="greek" name="cuisine" value="Greek" />
+                    Greek</label>
+                <label for="indian"><input class="ml-3" type="radio" id="indian" name="cuisine" value="Indian" />
+                    Indian</label>
+                <label for="irish"><input class="ml-3" type="radio" id="irish" name="cuisine"
+                        value="Irish" />Irish</label>
+                <label for="italian"><input class="ml-3" type="radio" id="italian" name="cuisine" value="Italian" />
+                    Italian</label>
+                <label for="japanese"><input class="ml-3" type="radio" id="japanese" name="cuisine" value="Japanese" />
+                    Japanese</label>
+                <label for="jewish"><input class="ml-3" type="radio" id="jewish" name="cuisine" value="Jewish" />
+                    Jewish</label>
+                <label for="korean"><input class="ml-3" type="radio" id="korean" name="cuisine" value="Korean" />
+                    Korean</label>
+                <label for="latin"><input class="ml-3" type="radio" id="latin" name="cuisine" value="Latin American" />
+                    Latin American</label>
+                <label for="mexican"><input class="ml-3" type="radio" id="mexican" name="cuisine" value="Mexican" />
+                    Mexican</label>
+                <label for="middleastern"><input class="ml-3" type="radio" id="middleastern" name="cuisine"
+                        value="Middle Eastern" />
+                    Middle Eastern</label>
+                <label for="spanish"><input class="ml-3" type="radio" id="spanish" name="cuisine" value="Spanish" />
+                    Spanish</label>
+                <label for="southern"><input class="ml-3" type="radio" id="southern" name="cuisine" value="Southern" />
+                    Southern</label>
+                <label for="thai"><input class="ml-3" type="radio" id="thai" name="cuisine" value="Thai" />
+                    Thai</label>
+                <label for="vietnamese"><input class="ml-3" type="radio" id="vietnamese" name="cuisine"
+                        value="Vietnamese" />
+                    Vietnamese</label>
+            </form>
+        </div>
+        <!--City-->
+        <div class="form-group text-center cityInput">
+            <h4>Please input location here</h4>
+            <input type="text" class="form-control mx-auto text-center" name="city" id="city" placeholder="City"
+                value="" style="width: 50%;" />
+            <!-- Search Button -->
+            <div class="searchBtn text-center mt-4">
+                <button type="button" class="btn" id="search">Search</button>
+            </div>
+        </div>
+    </div>
+    <!-- Search Results -->
+    <div class="results">
+        <div class="container">
+            <!--Restaurants-->
+            <div class="col ml-auto">
+                <div class="restaurants">
+                    <h2 class="eat">Restaurants Near Me</h2>
+                    <div id="restaurant_accordion"></div>
+                </div>
+            </div>
+            <!--Make Another Search-->
+            <div class="container" id="searchAgain">
+                <div class="row">
+                    <div class="col-md-3 offset-md-9 mb-3">
+                        <button type="button" class="btn" id="anotherSearch">
+                            Search Again
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--Modals-->
+    <!--Mealtime-->
+    <div class="modal fade" id="alertMeal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alertLabel1">Meal Time</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Please select a meal time.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn closeModal" data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Diet-->
+    <div class="modal fade" id="alertDiet" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alertLabel3">Diet</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Please select a dietary requirement.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn closeModal" data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Cuisine-->
+    <div class="modal fade" id="alertCuisine" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alertLabel4">Cuisine</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Please select a specific food type.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn closeModal" data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--City-->
+    <div class="modal fade" id="alertCity" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alertLabel5">City</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Please enter a valid city.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn closeModal" data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Disclaimer-->
+    <div class="modal fade" id="disclaimer" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alertLabel">Disclaimer</h5>
+                </div>
+                <div class="modal-body">
+                    <p class="card-text text-center mt-5">
+                        Please note that restaurants may change.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn closeModal" id="closeDisclaimer" data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Script - Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
