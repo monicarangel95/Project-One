@@ -43,11 +43,10 @@ q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
  }
 
 $(document).ready(function () {
+  var searchTerm = $("#searchId").val().trim();
   $("#searchBtn").click(function () {
-    var searchTerm = $("#searchId").val().trim();
-    console.log("searchTerm" + searchTerm);
+       console.log("searchTerm" + searchTerm);
     var queryURL = "https://youtube-search1.p.rapidapi.com/" + searchTerm;
-    console.log(queryURL);
     var settings = {
       async: true,
       crossDomain: true,
@@ -62,9 +61,13 @@ $(document).ready(function () {
     $.ajax(settings).done(function (response) {
       console.log(response.items);
       // changing number of results
-      for (var i = 0; i < 5; i++) {
+      var titleArray=response.items.map(video=>video.title)
+      console.log(titleArray);
+      //  if video title includes query seachItem, then show us results
+        if (titleArray[i].includes(searchTerm)) {
+          for (var i = 0; i < 5; i++) {
         var newdiv = $("<div>");
-        newdiv.append(
+                newdiv.append(
           "<div class= 'title'>" + response.items[i].title + "</div>"
         );
         newdiv.append(
@@ -76,6 +79,7 @@ $(document).ready(function () {
         );
         newdiv.append("<img src=" + response.items[i].thumbHigh + "/>");
         $("#results").append(newdiv);
+        }
       }
     });
   });
